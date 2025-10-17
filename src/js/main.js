@@ -93,36 +93,55 @@ askButton?.addEventListener('click', () => {
     modal.classList.remove('hidden');
 });
 
-// Both yes buttons trigger the same happy response
+// Handle positive responses
 ['yesButton', 'ofCourseButton'].forEach(id => {
     document.getElementById(id)?.addEventListener('click', () => {
         modal.classList.add('hidden');
-        finalModal.classList.remove('hidden');
+        const complimentModal = document.getElementById('complimentModal');
+        complimentModal.classList.remove('hidden');
         
-        // Trigger celebratory confetti
-        const end = Date.now() + 3000;
-        const colors = ['#ff69b4', '#ffb6c1', '#ffc0cb'];
+        // Show final modal after 2 seconds
+        setTimeout(() => {
+            complimentModal.classList.add('hidden');
+            finalModal.classList.remove('hidden');
+            
+            // Trigger enhanced confetti
+            const duration = 4000;
+            const colors = ['#ff69b4', '#ffb6c1', '#ffc0cb'];
+            const end = Date.now() + duration;
 
-        (function frame() {
-            confetti({
-                particleCount: 3,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: colors
-            });
-            confetti({
-                particleCount: 3,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: colors
-            });
+            (function frame() {
+                const timeLeft = end - Date.now();
+                const ticks = Math.max(200, 500 * (timeLeft / duration));
 
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        }());
+                confetti({
+                    particleCount: 4,
+                    angle: 60,
+                    spread: 60,
+                    origin: { x: 0 },
+                    colors: colors,
+                    ticks: ticks,
+                    shapes: ['heart'],
+                    gravity: 0.8,
+                    scalar: 2
+                });
+                confetti({
+                    particleCount: 4,
+                    angle: 120,
+                    spread: 60,
+                    origin: { x: 1 },
+                    colors: colors,
+                    ticks: ticks,
+                    shapes: ['heart'],
+                    gravity: 0.8,
+                    scalar: 2
+                });
+
+                if (timeLeft > 0) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }, 2000);
     });
 });
 
