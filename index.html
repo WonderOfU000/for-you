@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 💖</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/custom.css">
+</head>
+<body>
+    <div class="pink-bg">
+        <!-- Bow decoration -->
+        <div class="bow-decoration">🎀</div>
+
+        <!-- Main content -->
+        <div class="content-container">
+            <!-- Message Card -->
+            <div class="modal">
+                <h1 class="header-text">Hey [her name] 💕</h1>
+                <p class="message-text">I just wanted to say... you make the hallways brighter every time I see you.</p>
+                <p class="message-text">And I'm sorry for not asking you out sooner — I guess I was just a little shy 😅</p>
+                
+                <!-- Ask Button -->
+                <button id="askButton" class="cute-button">
+                    Click Me 💗
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ask Modal -->
+    <div id="askModal" class="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center hidden">
+        <div class="modal">
+            <h2 class="header-text">Would you like to go out with me?</h2>
+            <div class="modal-buttons">
+                <button id="yesButton" class="cute-button">Yes 💞</button>
+                <button id="ofCourseButton" class="cute-button">Of course �</button>
+            </div>
+            <button class="close-button close-modal">✕</button>
+        </div>
+    </div>
+
+    <!-- Final Modal -->
+    <div id="finalModal" class="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center hidden">
+        <div class="modal">
+            <h2 class="header-text">Yaayy I love you so much 💕</h2>
+            <button class="close-button close-modal">✕</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="fixed bottom-4 w-full text-center">
+        <p style="font-family: 'Dancing Script', cursive;">Made with 💖 by Ibrahim</p>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

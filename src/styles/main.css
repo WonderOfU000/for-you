@@ -1,0 +1,41 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Dancing+Script:wght@400;700&display=swap');
+
+/* Custom styles */
+.heart {
+  position: absolute;
+  pointer-events: none;
+  animation: heart-rain linear infinite;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #FFC0CB 0%, #FFFFFF 100%);
+}
+
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  animation: sparkle 1.5s linear infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Animation delays for hearts */
+.heart:nth-child(2n) { animation-delay: -2s; }
+.heart:nth-child(3n) { animation-delay: -3s; }
+.heart:nth-child(4n) { animation-delay: -4s; }
+.heart:nth-child(5n) { animation-delay: -5s; }
